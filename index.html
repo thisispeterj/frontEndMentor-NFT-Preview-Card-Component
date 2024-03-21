@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+<head>
+  <!-- META TAGS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <!-- SITE TITLE -->
   <title>Frontend Mentor | NFT preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- CSS STYLES -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GOOGL FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
-<body>
 
-  Equilibrium #3429
+<body class="flex-center">
+  <main>
+    <section class="card">
+      <div class="card__nft">
+        <img src="images/image-equilibrium.jpg" alt="NFT image">
+      </div>
+      <a href="#" class="card__title | margin-block  accent-hover">Equilibrium #3429</a>
 
-  Our Equilibrium collection promotes balance and calm.
+      <p>Our Equilibrium collection promotes balance and calm.</p>
 
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
+      <div class="flex-row space-between border-bottom padding-block margin-bottom">
+        <div class="flex-row gap-half align-center">
+          <img src="images/icon-ethereum.svg" alt="ethereum icon" class="icon-ethereum">
+          <p class="accent-cyan fw-600">0.041 ETH</p>
+        </div>
+        <div class="flex-row gap-half align-center">
+          <img src="images/icon-clock.svg" alt="clock icon clas" class="icon-clock">
+          <p>3 days left</p>
+        </div>
+      </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="flex-row align-center gap margin-bottom">
+        <img src="images/image-avatar.png" alt="profile picture" class="card__avatar">
+        <p>Creation of <span class="accent-white accent-hover">Jules Wyvern</span></p>
+      </div>
+
+    </section>
+  </main>
+
 </body>
+
 </html>

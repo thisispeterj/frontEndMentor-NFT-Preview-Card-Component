@@ -1,0 +1,235 @@
+/* CUSTOM PROPERTIES */
+:root {
+	/* COLORS */
+	/* ### Primary */
+	--soft-blue: hsl(215, 51%, 70%);
+	--cyan: hsl(178, 100%, 50%);
+
+	/* ### Neutral */
+	--deep-ocean: hsl(217, 54%, 11%);
+	--night-sky: hsl(216, 50%, 16%);
+	--slate-blue: hsl(215, 32%, 27%);
+	--white: hsl(0, 0%, 100%);
+
+	/* FONTS */
+	/* ### Root font size */
+	font-size: 18px;
+
+	/* ### Font families */
+	--ff-outfit: "Outfit", sans-serif;
+
+	/* ### Font weights */
+	--fw-300: 300;
+	--fw-400: 400;
+	--fw-600: 600;
+
+	/* UTILITIES */
+	--border-radius: 1em;
+	--padding: 1em;
+	--margin: 1em;
+
+	/* FLEX/GRID */
+	--gap: 1em;
+}
+/* RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/* Remove margin and padding from paragraphs */
+p {
+	margin: 0;
+}
+/* GENERAL STYLES */
+body {
+	background-color: var(--deep-ocean);
+	color: var(--soft-blue);
+	font-family: var(--ff-outfit);
+	font-weight: var(--fw-300);
+	line-height: 1.5;
+	padding-inline: var(--padding);
+}
+.icon-clock {
+	width: 17px;
+	height: 17px;
+}
+.icon-ethereum {
+	width: 11px;
+	height: 18px;
+}
+/* UTILITIES */
+.fw-600 {
+	font-weight: var(--fw-600);
+}
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-row {
+	display: flex;
+}
+.gap {
+	gap: var(--gap);
+}
+.gap-half {
+	gap: calc(var(--gap) / 2);
+}
+.space-between {
+	justify-content: space-between;
+}
+.align-center {
+	align-items: center;
+}
+.margin-block {
+	margin-block: var(--margin);
+}
+.margin-bottom {
+	margin-bottom: var(--margin);
+}
+.padding-block {
+	padding-block: var(--padding);
+}
+.border-bottom {
+	border-bottom: 1px solid var(--slate-blue);
+}
+.accent-white {
+	color: var(--white);
+}
+.accent-cyan {
+	color: var(--cyan);
+}
+.accent-hover:hover {
+	cursor: pointer;
+	color: var(--cyan);
+}
+/* CARD STYLES */
+.card {
+	padding: calc(var(--padding) * 1.5);
+	background-color: var(--night-sky);
+	border-radius: var(--border-radius);
+	max-width: 21em;
+}
+.card__nft {
+	position: relative;
+	cursor: pointer;
+	border-radius: calc(var(--border-radius) / 2);
+	overflow: hidden;
+}
+.card__nft:hover::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100;
+	background: url("images/icon-view.svg");
+	background-repeat: no-repeat;
+	width: 48px;
+	height: 48px;
+}
+.card__nft:hover::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: var(--cyan);
+	opacity: 0.5;
+}
+.card__title {
+	display: block;
+	color: var(--white);
+	font-size: 1.25em;
+	font-weight: var(--fw-600);
+	text-decoration: none;
+}
+.card__avatar {
+	border: 1px solid var(--white);
+	border-radius: 50%;
+	max-width: 2em;
+}
